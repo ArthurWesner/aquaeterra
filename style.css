@@ -1,0 +1,46 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  background: white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.seo-text{
+  position:absolute;
+  left:-9999px;
+}
+
+/* logo usando background (não img) */
+.logo {
+  width: 16vw;
+  max-width: 160px;
+  min-width: 60px;
+  aspect-ratio: 1/1;
+
+  background-image: url("logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  pointer-events: none;
+  user-select: none;
+
+  /* animação */
+  animation: subtleRotate 12s linear infinite;
+}
+
+/* animação de rotação suave */
+@keyframes subtleRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
