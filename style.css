@@ -1,46 +1,383 @@
-html, body {
+/* VARIÁVEIS DE COR E ESTILO */
+:root {
+  --bg-color: #080808;
+  --bg-card: #151515;
+  --text-light: #ffffff;
+  --text-muted: #a0a0a0;
+  --brand-orange: #d27936;
+  --brand-green: #687f43;
+  --font-main: 'Montserrat', sans-serif;
+}
+
+/* RESET BÁSICO */
+* {
   margin: 0;
-  height: 100%;
-  background: white;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-light);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden; /* Evita rolagem horizontal indesejada na tela inteira */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- CABEÇALHO --- */
+header {
+  background-color: var(--bg-color);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+
+.logo-container .logo {
+  width: 80px;
+  height: auto;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 2px;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.main-nav a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: var(--brand-orange);
+}
+
+.header-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-btn {
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.icon-btn:hover {
+  transform: scale(1.05);
+}
+
+.orange-btn { background-color: var(--brand-orange); }
+.green-btn { background-color: var(--brand-green); }
+
+/* --- HERO (BANNER PRINCIPAL) --- */
+.hero {
+  max-width: 1400px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+
+.hero-bg {
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
 }
 
-.seo-text{
-  position:absolute;
-  left:-9999px;
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
 }
 
-/* logo usando background (não img) */
-.logo {
-  width: 16vw;
-  max-width: 160px;
-  min-width: 60px;
-  aspect-ratio: 1/1;
-
-  background-image: url("logo.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  pointer-events: none;
-  user-select: none;
-
-  /* animação */
-  animation: subtleRotate 12s linear infinite;
+.hero-overlay h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 25px;
 }
 
-/* animação de rotação suave */
-@keyframes subtleRotate {
-  from {
-    transform: rotate(0deg);
+.text-orange { color: var(--brand-orange); }
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--brand-orange);
+  color: white;
+  padding: 15px 35px;
+  font-weight: 700;
+  border-radius: 30px;
+  font-size: 1rem;
+  align-self: flex-start;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover { background-color: #b9692c; }
+
+/* --- CATEGORIAS (CARDS) --- */
+.categories {
+  padding: 60px 0;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  height: 220px;
+  background-color: #222;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.border-green { border-left: 6px solid var(--brand-green); }
+.border-orange { border-left: 6px solid var(--brand-orange); }
+
+.card-content h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* --- QUEM SOMOS --- */
+.about {
+  padding: 60px 0 100px 0;
+}
+
+.about-flex {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  justify-content: center;
+}
+
+.about-logo {
+  width: 200px;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+.about-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #d27936;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* --- RODAPÉ --- */
+footer {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 30px 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover { color: var(--brand-orange); }
+
+/* ========================================================
+   MEDIA QUERIES - RESPONSIVIDADE
+   ======================================================== */
+
+/* --- VERSÃO TABLET (Telas menores que 992px) --- */
+@media (max-width: 992px) {
+  .hero-overlay h1 {
+    font-size: 2.2rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .hero-image-container {
+    height: 400px;
+  }
+
+  .main-nav ul {
+    gap: 15px;
+  }
+  
+  .main-nav a {
+    font-size: 0.8rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas no tablet */
+  }
+
+  .about-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+}
+
+/* --- VERSÃO SMARTPHONE (Telas menores que 768px) --- */
+@media (max-width: 768px) {
+  
+  /* Ajuste de Cabeçalho */
+  .header-container {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
+
+  /* Esconde o menu de links para não quebrar a barra no celular */
+  .main-nav {
+    display: none; 
+    /* Num projeto futuro, isso seria trocado por um menu "Hambúrguer" */
+  }
+
+  /* Ajuste do Banner (Hero) */
+  .hero {
+    padding: 0 10px;
+  }
+
+  .hero-image-container {
+    height: 350px;
+    border-radius: 15px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.8rem;
+  }
+
+  /* --- O EFEITO DE CARROSSEL NOS CARDS (O SEGREDO DO SMARTPHONE) --- */
+  .cards-wrapper {
+    padding: 0; /* Remove padding lateral para o carrossel encostar na borda */
+  }
+  
+  .cards-grid {
+    display: flex; /* Muda de Grid para Flexbox */
+    overflow-x: auto; /* Permite rolar para o lado */
+    scroll-snap-type: x mandatory; /* Força a parada no centro do card */
+    gap: 15px;
+    padding: 0 20px 20px 20px;
+    
+    /* Esconde a barra de rolagem visualmente, mas mantém a funcionalidade */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .cards-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+  .card {
+    /* Define a largura do card para 85% da tela. 
+       Os 15% restantes permitem ver a "ponta" do próximo card */
+    flex: 0 0 85%; 
+    scroll-snap-align: center; /* Quando parar de rolar, centraliza o card */
+  }
+
+  /* Ajuste do Rodapé */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
   }
 }
