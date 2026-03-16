@@ -3,38 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Minha Marca</title>
-
-  <meta name="description" content="Site oficial da Minha Marca.">
-  <meta name="keywords" content="minha marca, empresa, site oficial">
-  <meta name="author" content="Minha Marca">
-
-  <!-- permitir indexação -->
-  <meta name="robots" content="index, follow">
-
-  <!-- favicon opcional -->
+  <title>Aqua e Terra - Habitat e Informação</title>
+  <meta name="description" content="Informações especializadas sobre terrários, aquaterrários, equipamentos e cuidados para répteis e anfíbios.">
   <link rel="icon" href="logo.png">
-
   <link rel="stylesheet" href="style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
 
-  <h1 class="seo-text">Site oficial da Minha Marca</h1>
-  <h1 class="seo-text">Aqua e terrra</h1>
-  <h1 class="seo-text">Terrário para répteis</h1>
+  <header>
+    <div class="header-container">
+      <div class="logo-container">
+        <img src="logo.png" alt="Logo Aqua e Terra - Axolote e Gecko" class="logo">
+      </div>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">HABITATS</a></li>
+          <li><a href="#">EQUIPAMENTOS</a></li>
+          <li><a href="#">CUIDADOS</a></li>
+          <li><a href="#">QUEM SOMOS</a></li>
+          <li><a href="#">GUIAS</a></li>
+        </ul>
+      </nav>
 
+      <div class="header-actions">
+        <button class="icon-btn orange-btn" aria-label="Pesquisar artigos"><i class="fas fa-search"></i></button>
+        <button class="icon-btn green-btn" aria-label="Contato"><i class="fas fa-envelope"></i></button>
+      </div>
+    </div>
+  </header>
 
-<div class="container">
-  <div class="logo"></div>
-</div>
+  <main>
+    <section class="hero">
+      <div class="hero-image-container">
+        <img src="banner.png" alt="Terrário naturalístico com plantas e tronco" class="hero-bg">
+        <div class="hero-overlay">
+          <h1><span class="text-orange">AQUA E TERRA:</span><br> O HABITAT PERFEITO<br>PARA SEUS ANIMAIS</h1>
+          <a href="#" class="cta-button">EXPLORAR CONTEÚDOS</a>
+        </div>
+      </div>
+    </section>
 
-<script>
-document.addEventListener("contextmenu", e => e.preventDefault());
-document.addEventListener("dragstart", e => e.preventDefault());
-document.addEventListener("selectstart", e => e.preventDefault());
-</script>
+    <section class="categories">
+      <div class="container cards-wrapper">
+        <div class="cards-grid">
+          
+          <article class="card">
+            <div class="card-image">
+              <img src="terrarios.png" alt="Terrários e Aquaterrários">
+            </div>
+            <div class="card-content border-green">
+              <h3>TERRÁRIOS E AQUATERRÁRIOS</h3>
+              <p>Descubra como criar o ambiente ideal, seja para um gecko em ambiente árido ou um axolote em águas cristalinas.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="iluminacao.png" alt="Lâmpada e termostato">
+            </div>
+            <div class="card-content border-orange">
+              <h3>ILUMINAÇÃO E AQUECIMENTO</h3>
+              <p>Informações vitais sobre o controle térmico e a radiação UVB/UVA essenciais para a saúde e o metabolismo do animal.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="substrato.png" alt="Substrato e musgo">
+            </div>
+            <div class="card-content border-green">
+              <h3>SUBSTRATOS E DECORAÇÃO</h3>
+              <p>Aprenda a escolher os elementos naturais corretos para replicar o bioma perfeito e estimular comportamentos naturais.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container about-flex">
+        <img src="logo.png" alt="Mascotes Aqua e Terra: Axolote e Gecko" class="about-logo">
+        <div class="about-">
+          <h2>A PAIXÃO POR DETALHES</h2>
+          <p>O nome Aqua e Terra não foi escolhido por acaso. Nossa identidade celebra a diversidade da vida, unindo o mundo aquático do Axolote ao ambiente terrestre do Gecko. Entendemos que cada projeto é único. Seja para planejar um aquário estabilizado ou ajustar meticulosamente as dimensões e os parâmetros de umidade para uma Jiboia-arco-íris da Amazônia, nosso objetivo é compartilhar conhecimento e as melhores práticas para o bem-estar animal.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2026 Aqua e Terra. Todos os direitos reservados.</p>
+      <div class="footer-links">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Fale Conosco</a>
+      </div>
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
